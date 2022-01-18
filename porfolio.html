@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+           <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap");
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              text-decoration: none;
+              list-style: none;
+              color: white;
+              font-family: sans-serif;
+            }
+            body {
+            
+              background-color: #000000;
+            }
+
+            .max-width {
+              margin: auto;
+              width: 100%;
+              max-width: 1100px;
+              background-color: black;
+            }
+            header {
+              margin: auto;
+              background-color: #000000;
+              z-index: 999;
+              position: relative;
+            }
+            .navbar {
+              top: 0;
+              z-index: 1000;
+              position: fixed;
+              width: 100%;
+              max-width: 1100px;
+              display: flex;
+              justify-content: space-between;
+              background-color: black;
+              align-items: center;
+              padding: 0.5rem 0.5rem 0rem 0.5rem;
+              box-shadow: 0px 1px 1px #073501;
+            }
+
+            .hamburger {
+              display: none;
+            }
+
+            .bar {
+              display: block;
+              width: 25px;
+              height: 3px;
+              margin: 5px auto;
+              -webkit-transition: all 0.3s ease-in-out;
+              transition: all 0.3s ease-in-out;
+              background-color: #1eff00;
+            }
+            .nav-menu {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+            .nav-menu > li {
+              margin: 10px;
+              border-radius: 10px;
+              text-align: center;
+              width: 80px;
+            }
+
+            .nav-menu > li > a {
+              font-size: 26px;
+          
+              font-family: "Oleo Script Swash Caps", cursive;
+              border-bottom: 4px solid #000000;
+            }
+
+            .nav-menu > li > a:hover {
+              transition: 0.4s all ease-in;
+              border-bottom: 4px solid #1eff00;
+            }
+            .nav-menu > li > a :active {
+              transition: 0.5s;
+            }
+            .nav-menu > li:active {
+              transition: 0.5s;
+              transform: scale(0.6);
+            }
+
+            .nav-logo > img {
+              width: 35px;
+            }
+            .nav-logo>img:active {
+              transition: 0.4s;
+              transform: scale(0.4);
+            }
+
+            @media only screen and (max-width: 900px) {
+              .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 5rem;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.9);
+                width: 100%;
+
+                border-radius: 10px;
+                text-align: center;
+                transition: 0.3s;
+              }
+              .nav-menu li a {
+              }
+              .nav-menu.active {
+                left: 0;
+              }
+
+              .nav-menu > li {
+                margin: 1.5rem 0;
+              }
+
+              .hamburger {
+                display: block;
+                cursor: pointer;
+              }
+
+              .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+              }
+
+              .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+              }
+
+              .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+              }
+            }
+            main {
+              width: 100%;
+              height: 100vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            #home {
+              margin-top: 150px;
+              text-align: center;
+              width: 600px;
+              max-width: 95%;
+              padding: 10px;
+            }
+            h1 {
+              font-size: 3.2rem;
+            }
+            .developer {
+              margin: 12px 0px;
+              font-size: 1.4rem;
+              letter-spacing: 1px;
+            }
+            h3 {
+              color: #e7e7e7;
+            }
+            p {
+              font-size: 17px;
+              line-height: 24px;
+            }
+            #profile,
+            #skill,
+            #project,
+            #contact {
+              color: #1eff00;
+              width: 100%;
+              text-align: center;
+            
+              font-size: 28px;
+              font-family: "Oleo Script Swash Caps", cursive;
+            }
+            .span {
+              text-align: center;
+              display: inline-block;
+              width: 25px;
+              height: 3px;
+              background-color: white;
+            }
+            @media screen and (max-width: 800px) {
+              h1 {
+                font-size: 2rem;
+              }
+              .developer {
+                font-size: 1.2rem;
+              }
+            }
+            section {
+              padding: 10px;
+              margin: 35px auto;
+              width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: space-between;
+             
+          
+            }
+
+            .profile {
+              margin-bottom: 15px;
+            }
+            .image-column {
+              margin: auto;
+              width: fit-content;
+            }
+            .image-column > img {
+              border-radius: 20px;
+              width: 300px;
+         
+            }
+
+            .text-column {
+              width: 500px;
+              max-width: 95%;
+              margin: 10px auto;
+             
+          
+            }
+
+            .column {
+              width: 500px;
+              margin: 10px auto;
+              max-width: 95%;
+              font-weight: bold;
+              letter-spacing: 1px;
+             
+            }
+
+            .skills>.column>ul>li{
+              font-weight: normal;
+              list-style: disc;
+              margin: 10px 20px;     
+              line-height: 26px;
+            }
+
+            .workflow,
+            .tools {
+              display: inline-block;
+              width: 200px;
+              max-width: 45%;
+              letter-spacing: 1px;
+            }
+            .workflow > ul,
+            .tools > ul {
+              font-weight: normal;
+              line-height: 24px;
+              margin: 15px;
+            }
+
+            .workflow > ul > li,
+            .tools > ul > li {
+              margin: auto;
+              list-style: disc;
+            }
+            .project-column {
+              text-align: center;
+              width: 530px;
+              margin: 10px auto;
+              max-width:95%;
+              font-weight: bold;
+              background-color: #1f251f;
+              border-radius: 15px;
+            
+            }
+           .project-column>a>img{
+            width: 100%;
+             height: 100%;
+             max-width: 500px;
+           }
+
+            .container{
+              margin: 40px auto;
+              text-align: center;
+              width: 600px;
+              max-width: 80%;
+              border: 3px solid #f0f0f0;
+              border-radius: 10px;
+            }
+             h2{
+              margin: 20px 0px;
+            }
+            .say-hello-container{
+              margin: 20px;
+            
+            }
+            .say-hello-container>a{
+              padding: 5px 20px;
+              font-size: 20px;
+              font-weight: bold;
+              border-radius: 10px;
+              color: black;
+              background-color: #1eff00;
+            
+            }
+            .say-hello-container>a:hover{
+              color: white;
+              transition: all 0.4s ease;
+              border: 1px solid #1eff00;
+              background-color: black;
+            }
+            .say-hello-container:active{  
+              transition: 0.3s;
+              transform: scale(0.7);
+            }
+            .social>a>i{
+              font-size: 30px;
+              margin: 10px 10px ;
+            }
+            .social>a>i:hover{
+              transition: 0.4s ease-in;
+              color: #1eff00;
+            }
+            .social>a>i:active{
+              transform: scale(0.7);
+              transition: 0.4s;
+        
+            }
+
+
+            
+            .reveal {
+              position: relative;
+              transform: translatey(150px);
+              opacity: 0;
+              transition: 1s all ease-out;
+            }
+
+            .reveal.active {
+              transform: translatey(0);
+              opacity: 1;
+            }       
+    </style>
+  </head>
+  <body>
+    <div class="max-width">
+      <!------------------------------------NAV BAR SECTION--------------------------------->
+
+      <header>
+        <nav class="navbar">
+          <a href="#" class="nav-logo"><img src="https://i.ibb.co/LddVCdL/Group-1.png" alt="Group-1" border="0" /></a>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="#profile" id="About" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#skill" id="Skills" class="nav-link">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a href="#project" id="Project" class="nav-link">Project</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" id="Contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
+      </header>
+      <!-----------------XXXXXX------------NAV BAR CLOSING SECTION-------------XXXXXX------------->
+
+      <!------------------------------------------HOME SECTION-------------------------------------->
+      <main>
+        <div id="home">
+          <h2>Hello, I'm</h2>
+          <h1>Ahmad Ibrahim</h1>
+          <h1 style="font-family: 'Oleo Script Swash Caps', cursive">
+            Email Developer
+          </h1>
+          <h4 class="developer">
+            I’m a developer specializing in building (and occasionally
+            designing) simple email templates.
+          </h4>
+        </div>
+      </main>
+      <!-----------------XXXXXX------------HOME CLOSING SECTION-------------XXXXXX------------->
+      <div id="profile">Profile</div>
+      <!-----------------------------------ABOUT SECTION----------------------------------->
+      <section id="about">
+        <div class="image-column reveal"><img src="https://i.ibb.co/zH2Y7zp/prince.jpg" alt="prince"/></div>
+        <div class="text-column reveal">
+          <h3 class="profile">About Me <span class="span"></span></h3>
+          <p>
+            Hi, I’m Ahmad! from Adamawa state, Nigeria. I am a 21-year-old student who graduated with a diploma in Civil Law.
+            I work as a Graphic Designer for two months before transitioning to email
+            development, I like to study new things. And I’m always proactive
+            about seeking new opportunities to develop and grow in my role.
+            Those opportunities could be in the form of mentorship, a conference,
+            listening to a speaker, or taking on a new project, but the
+            motivation is to gain more knowledge of the field.
+          </p>
+          <a href="#contact" style="color: #1eff00; font-weight: 800"
+            >Contact me to learn more about me</a>
+        </div>
+      </section>
+      <!-----------------XXXXXX------------CLOSING ABOUT SECTION-------------XXXXXX------------->
+      <div id="skill">Competence</div>
+      <!-----------------------------------SKILLS SECTION----------------------------------->
+      <section class="skills">
+        <div class="column reveal">
+          <h3>Skills</h3>
+          <ul>
+              <li>HTML 5</li>
+              <li>CSS 3</li>
+              <li> Through my journey, I've gained a solid understanding of  HTML & CSS, and I dedicated a lot of time 
+                applying table elements and media queries to build real-world projects. I am a student
+            looking to put my skills to use.
+           </li>
+            
+            </ul>
+         
+
+        </div>
+        <!-----------------XXXXXX------------CLOSING SKILLS SECTION-------------XXXXXX------------->
+
+        <!-----------------------------------TOOLS & WORKFLOW SECTION----------------------------------->
+
+        <div
+          class="column reveal"
+          style="display: flex; justify-content: space-around"
+        >
+          <div class="tools reveal">
+            <h3>Technology</h3>
+            <ul>
+              <li>Linux</li>
+              <li>VS Code</li>
+              <li>Grammerly</li>
+              <li>CorelDraw</li>
+              <li>Chrome</li>
+              <li>Fire Fox</li>
+              <li>Figma</li>
+              <li>Litmus</li>
+            </ul>
+          </div>
+          <div class="workflow reveal">
+            <h3>Workflow</h3>
+            <ul>
+              <li>Research</li>
+              <li>Idea</li>
+              <li>Design</li>
+              <li>Implement</li>
+              <li>Develope</li>
+              <li>Test</li>
+              <li>Review</li>
+              <li>Launch</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-----------------XXXXXX------------CLOSING TOOLS & WORKFLOW SECTION-------------XXXXXX------------->
+      <div id="project">Project</div>
+      <!-----------------------------------PROJECTS SECTION----------------------------------->
+      <section>
+
+
+            <div class="project-column reveal">
+                <a href="women.html"  target="_blank"><img src="https://i.ibb.co/7GgfMZZ/1.jpg" alt="Promotional email for women shopping store" border="0"><a>
+                 <div style="margin: 15px 0px"> 
+                  <h4>Promotional Email</h4>
+                  <div style="width: 120px;margin: auto; text-align: center; font-size: 24px; padding: 15px; display: flex; justify-content: space-between;">      
+                    <a href="women.html" target="_blank" ><i class="fas fa-external-link-alt"></i></a>
+                    <a href="women.html" target="_blank" ><i class="fab fa-github"></i></a>
+                  </div>
+                </div>
+            
+            </div>
+            <div class="project-column reveal">
+                <a href="travel.html"  target="_blank"><img src="https://i.ibb.co/KmG9fyM/2.jpg" alt="Promotional email for travelling agency" border="0"></a>
+                <div style="margin: 15px 0px"> 
+                  <h4>Promotional Email</h4>
+                  <div style="width: 120px;margin: auto; text-align: center; font-size: 24px; padding: 15px; display: flex; justify-content: space-between;">      
+                    <a href="travel.html" target="_blank" ><i class="fas fa-external-link-alt"></i></a>
+                    <a href="travel.html" target="_blank" ><i class="fab fa-github"></i></a>
+                  </div>
+                </div>
+           
+            </div>
+            <div class="project-column reveal">
+                <a href="newsletter.html"  target="_blank"><img src="https://i.ibb.co/JmtZH5w/3.jpg" alt=" Bootcamp Newsletter" border="0" "></a>
+                <div style="margin: 15px 0px"> 
+                      <h4>Newsletter Email</h4>
+                      <div style="width: 120px;margin: auto; text-align: center; font-size: 24px; padding: 15px; display: flex; justify-content: space-between;">      
+                        <a href="newsletter.html" target="_blank" ><i class="fas fa-external-link-alt"></i></a>
+                        <a href="newsletter.html" target="_blank" ><i class="fab fa-github"></i></a>
+                      </div>
+                  </div>
+            </div>
+            <div class="project-column reveal">
+                <a href="transactional.html" target="_blank"><img src="https://i.ibb.co/cbynnpv/4.jpg" alt="transactional email" border="0"  style="z-index: 0;"></a>
+               <div style="margin: 15px 0px"> 
+                  <h4>Transactional Email</h4>
+                  <div style="width: 120px;margin: auto; text-align: center; font-size: 24px; padding: 15px; display: flex; justify-content: space-between;">      
+                    <a href="transactional.html" target="_blank" ><i class="fas fa-external-link-alt"></i></a>
+                    <a href="transactional.html" target="_blank" ><i class="fab fa-github"></i></a>
+                  </div>
+               </div>
+            <div>
+
+         
+
+             
+        </section>
+      <!------------------xxxxxxxx-----------------PROJECTS CLOSING SECTION------------------xxxxxxxxxxxxx----------------->
+
+      <div id="contact">Get in Touch</div>
+      <!-----------------------------------CONTACT SECTION----------------------------------->
+
+<div >
+       
+         <div class="container">
+            <h2>Let's Build Something Together</h5>
+             <div class="say-hello-container"><a href="mailto:muaminab@gmail.com">Say Hello</a></div>
+               <div class="social">
+                  <a href="https://www.linkedin.com/in/ahmad-ibrahim-851a06223?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BTeBZ2JLXTbqXC0LsV5n4%2FA%3D%3D" target="_blank"> <i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://github.com/ahmadibrah77" target="_blank"> <i class="fab fa-github"></i></a>
+                </div>
+             </div>
+         </div>
+
+
+      <!------------------xxxxxxxx-----------------CONTACT CLOSING SECTION------------------xxxxxxxxxxxxx----------------->
+
+      <!-----------------XXXXXX------------MAX WIDTH CLOSING SECTION-------------XXXXXX------------->
+    </div>
+    <script > const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+}
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+</script>
+  </body>
+</html>
